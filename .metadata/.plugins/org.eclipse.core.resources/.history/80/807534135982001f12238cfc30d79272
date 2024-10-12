@@ -1,0 +1,17 @@
+#ifndef LCD1602_H_
+#define LCD1602_H_
+
+#include "stdint.h"
+#define LCD_NUMBER 1
+
+extern void lcd_init(uint8_t);
+extern void lcd_clear(uint8_t);
+
+extern void lcd_setcursor(uint8_t, unsigned char, unsigned char);
+extern void lcd_writeChar(uint8_t, char);
+extern void lcd_writeString(uint8_t, char*);
+
+extern void lcd16x2_sl(uint8_t);
+extern void lcd16x2_sr(uint8_t);
+
+#endif

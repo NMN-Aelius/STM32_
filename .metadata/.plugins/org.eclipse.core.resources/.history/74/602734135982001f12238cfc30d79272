@@ -1,0 +1,191 @@
+#include "lcd1602_config.h" // include "main.h" file, that contain HAL code
+#include "lcd1602.h"
+#include "stdint.h" //standart lib for correct int type in code
+#define LCD_NUMBER 1
+
+void lcd_data(uint8_t lcd16x2Index, unsigned char data)
+{
+	/* THIS IS THE IDEA OF THIS CODE
+	the LSB of bit is pin D4, that take care of the lowest weight bit of "1111"
+	for examble it is
+		0001 : -> D4 only take care of the location of bit "1"
+		0010 : -> D5
+		0100 : -> D6
+		1000 : -> D7
+	*/
+	if (data & 1) // 1 in hex type
+		HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D4_GPIOx, D4_PINx, 1);
+	else
+		HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D4_GPIOx, D4_PINx, 0);
+
+
+	if (data & 2) // 2 in hex type
+		HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D5_GPIOx, D5_PINx, 1);
+	else
+		HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D5_GPIOx, D5_PINx, 0);
+
+
+	if (data & 4) // 4 in hex type
+		HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D6_GPIOx, D6_PINx, 1);
+	else
+		HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D6_GPIOx, D6_PINx, 0);
+
+
+	if (data & 8) // 8 in hex type
+		HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D7_GPIOx, D7_PINx, 1);
+	else
+		HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D7_GPIOx, D7_PINx, 0);
+}
+
+void lcd_cmd(uint8_t lcd16x2Index, unsigned char cmd)
+{
+	HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D2_GPIOx, D2_PINx, 0); // write command
+	// set data of command
+	lcd_data(lcd16x2Index, cmd);
+
+	// make sure with this code line
+	HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D3_GPIOx, D3_PINx, 0); // EN low to ensure/ confirm current state is 0
+	delay_us(5);
+
+	// stop receive data 
+	HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D3_GPIOx, D3_PINx, 1); // EN high to stop receiving
+
+	// reset state of EN pin for receiving next data
+	delay_us(5);
+	HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D3_GPIOx, D3_PINx, 0); // EN high to stop receiving
+}
+
+void lcd_init(uint8_t lcd16x2Index)
+{
+	/*
+	FLOW CHART FOR PREPARING INTERACT WITH LCD
+	this function is called one time only, so dont care about systick overflow
+	*/
+
+	//ms, this return current value of tick counter
+	while (HAL_GetTick() < 60); 
+	// Write command or data?
+	HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D2_GPIOx, D2_PINx, 0); //rs
+	// EN low to ensure/ confirm current state is 0
+	HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D3_GPIOx, D3_PINx, 0); //en
+	delay_us(5);
+	
+	// cmd: set 4-bits nibble mode lcd, send 4bits at each time
+	lcd_data(lcd16x2Index, 0x00);
+	delay_ms(150);
+	// cmd: return home, send init command to convert LCD to 4 bits mode
+	lcd_data(lcd16x2Index, 0x03);
+	delay_ms(5);
+	// cmd: return home
+	lcd_data(lcd16x2Index, 0x02);
+	delay_ms(5);
+	// cmd: display control, 1000, 1dcb - d:off display, c:cursor not display, b: not blink cursor
+	lcd_data(lcd16x2Index, 0x08);
+	// cmd: display control, 1100, 1dcb - d:on display, c:cursor not display, b: not blink cursor
+	lcd_data(lcd16x2Index, 0x0C);
+	// cmd: entry mode set, 0110, 01(i/d)s - i:increase cursor, s: shift base on (i/d) set 1: shift left, 0: shift right
+	lcd_data(lcd16x2Index, 0x06);
+	// cmd: clear display, clear and return cursor to the first place
+	lcd_data(lcd16x2Index, 0x01);
+}
+
+void lcd_clear(uint8_t lcd16x2Index)
+{
+	lcd_cmd(lcd16x2Index, 0x01);
+	delay_ms(2);
+}
+
+// function set to move cursor to row i, col j
+void lcd_setcursor(uint8_t lcd16x2Index, unsigned char row, unsigned char col)
+{
+	// write 4 bits command
+	unsigned char temp, low4, high4;
+
+	if (row == 1)
+	{
+		//0x80 first address of line 1, col is user counter and -1 is match to index
+		temp = 0x80 + col - 1;
+		
+		//slip into high bit and low bit to move address in lcd
+		high4 = temp >> 4;
+		low4 = temp & 0x0f;
+
+		//command, drive to lcd
+		lcd_cmd(lcd16x2Index, high4);
+		lcd_cmd(lcd16x2Index, low4);
+	}
+	
+	if(row == 2)
+	{
+		//0xc0, move to first of line 2 address
+		temp = 0xc0 + col - 1;
+
+		//sliping into 2 upper and lower set of 4 bits
+		high4 = temp >> 4;
+		low4 = temp & 0x0f;
+
+		//cmd, set to lcd
+		lcd_cmd(lcd16x2Index, high4);
+		lcd_cmd(lcd16x2Index, low4);
+	}
+}
+
+void lcd_writeChar(uint8_t lcd16x2Index, char data)
+{
+	//prepare for data
+	uint8_t high4 = 0xf0 & data;
+	uint8_t low4 = 0x0f & data;
+
+	//================HIGH SET BITS===================
+	//set pin rw to low for 1- writing data (instead of 0 - write command)
+	HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D2_GPIOx, D2_PINx, 1);
+	//check ready to get input data
+	HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D3_GPIOx, D3_PINx, 0);
+
+	//write data
+	lcd_data(lcd16x2Index, high4);
+
+	//pin signal data input
+	HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D3_GPIOx, D3_PINx, 1);
+	//reset state of EN pin for the next value/ data
+	HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D3_GPIOx, D3_PINx, 0);
+
+	//================LOW SET BITS====================
+	//set pin rw to low for 1- writing data (instead of 0 - write command)
+	HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D2_GPIOx, D2_PINx, 1);
+	//check ready to get input data
+	HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D3_GPIOx, D3_PINx, 0);
+
+	//write data
+	lcd_data(lcd16x2Index, low4);
+
+	//pin signal data input
+	HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D3_GPIOx, D3_PINx, 1);
+	//reset state of EN pin for the next value/ data
+	HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D3_GPIOx, D3_PINx, 0);
+}
+
+void lcd_writeString(uint8_t indexLCD, char* str)
+{
+	for (int i = 0; i != '\0'; i++) //? finish the line
+	{
+		lcd_writeChar(indexLCD, str[i]);
+	}
+	HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D2_GPIOx, D2_PINx, 1);
+}
+
+void lcd16x2_sl(uint8_t lcd_index)
+{
+	//clear the command
+	lcd_cmd(lcd_index, 0x01);
+	//turn off curror  
+	lcd_cmd(lcd_index, 0x80); 
+}
+
+void lcd16x2_sr(uint8_t lcd_index)
+{
+	//clear the command
+	lcd_cmd(lcd_index, 0x01);
+	//turn on BUT not blinking lcd  
+	lcd_cmd(lcd_index, 0x0c);
+}

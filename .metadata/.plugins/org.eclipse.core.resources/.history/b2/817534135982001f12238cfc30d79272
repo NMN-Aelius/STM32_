@@ -1,0 +1,18 @@
+#include "lcd1602_config.h"
+#include "lcd1602.h" //? make clear must this be added? again when have been include in lcd1602_config.h before
+
+const  LCD1602_cfg_typedef LCD1602_param[LCD_NUMBER] =
+{
+	{
+		NODE,
+		NULL, NULL, // none pin d0
+		NULL, NULL, // none pin d1
+		GPIOA, GPIO_PIN_2, // pin RW
+		GPIOA, GPIO_PIN_3, // pin EN
+
+		GPIOA, GPIO_PIN_4, // pin d4
+		GPIOA, GPIO_PIN_5, // pin d5
+		GPIOA, GPIO_PIN_6, // pin d6
+		GPIOA, GPIO_PIN_7, // pin d7
+	}
+};

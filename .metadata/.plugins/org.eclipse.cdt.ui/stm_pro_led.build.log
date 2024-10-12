@@ -1,0 +1,10 @@
+08:14:45 **** Incremental Build of configuration Debug for project stm_pro_led ****
+make -j16 all 
+arm-none-eabi-size  stm_pro_led.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6752	     12	   1644	   8408	   20d8	stm_pro_led.elf
+Finished building: default.size.stdout
+ 
+
+08:14:45 Build Finished. 0 errors, 0 warnings. (took 225ms)
+

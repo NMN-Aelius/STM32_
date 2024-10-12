@@ -1,0 +1,54 @@
+#ifndef LCD1602_CONFIG_H_
+#define LCD1602_CONFIG_H_
+
+#include "main.h"
+#include "lcd1602.h" // just for get LCD_NUMBER macro
+//struct for GPIO
+typedef struct
+{
+	//index specify number of lcd have in board of use
+	uint8_t LCD_INSTANCE;
+
+	/* 
+		Pin config for STM32 base on HAL Library
+		typedef struct
+		{
+		  __IO uint32_t CRL;
+		  __IO uint32_t CRH;
+		  __IO uint32_t IDR;
+		  __IO uint32_t ODR;
+		  __IO uint32_t BSRR;
+		  __IO uint32_t BRR;
+		  __IO uint32_t LCKR;
+		} GPIO_TypeDef;
+	*/
+
+	GPIO_TypeDef* D1_GPIOx;
+	uint16_t D1_PINx;
+
+	GPIO_TypeDef* D2_GPIOx;
+	uint16_t D2_PINx;
+
+	GPIO_TypeDef* D3_GPIOx;
+	uint16_t D3_PINx;
+
+	GPIO_TypeDef* D4_GPIOx;
+	uint16_t D4_PINx;
+
+	GPIO_TypeDef* D5_GPIOx;
+	uint16_t D5_PINx;
+
+	GPIO_TypeDef* D6_GPIOx;
+	uint16_t D6_PINx;
+
+	GPIO_TypeDef* D7_GPIOx;
+	uint16_t D7_PINx;
+
+	GPIO_TypeDef* D8_GPIOx;
+	uint16_t D8_PINx;
+}LCD1602_cfg_typedef;
+
+//declare for most value
+extern LCD1602_cfg_typedef LCD1602_param[LCD_NUMBER];
+
+#endif

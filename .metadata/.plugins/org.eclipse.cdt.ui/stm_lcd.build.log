@@ -1,0 +1,123 @@
+22:16:28 **** Build of configuration Debug for project stm_lcd ****
+make -j16 all 
+arm-none-eabi-gcc "../Library/lcd1602.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/2.Code/stm_project/stm_lcd/Library" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Library/lcd1602.d" -MT"Library/lcd1602.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Library/lcd1602.o"
+arm-none-eabi-gcc "../Library/lcd1602_config.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/2.Code/stm_project/stm_lcd/Library" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Library/lcd1602_config.d" -MT"Library/lcd1602_config.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Library/lcd1602_config.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/2.Code/stm_project/stm_lcd/Library" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/2.Code/stm_project/stm_lcd/Library" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/2.Code/stm_project/stm_lcd/Library" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/2.Code/stm_project/stm_lcd/Library" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/2.Code/stm_project/stm_lcd/Library" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/2.Code/stm_project/stm_lcd/Library" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/2.Code/stm_project/stm_lcd/Library" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/2.Code/stm_project/stm_lcd/Library" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/2.Code/stm_project/stm_lcd/Library" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/2.Code/stm_project/stm_lcd/Library" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/2.Code/stm_project/stm_lcd/Library" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/2.Code/stm_project/stm_lcd/Library" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/2.Code/stm_project/stm_lcd/Library" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -I"D:/2.Code/stm_project/stm_lcd/Library" -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f103c8tx.d" -MT"Core/Startup/startup_stm32f103c8tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Startup/startup_stm32f103c8tx.o" "../Core/Startup/startup_stm32f103c8tx.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/2.Code/stm_project/stm_lcd/Library" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:334,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Core/Src/main.c: In function 'delay_us':
+../Library/lcd1602_config.c:4:28: error: conflicting types for 'LCD1602_param'; have 'const LCD1602_cfg_typedef[1]'
+    4 | const  LCD1602_cfg_typedef LCD1602_param[LCD_NUMBER] =
+      |                            ^~~~~~~~~~~~~
+In file included from ../Library/lcd1602_config.c:1:
+../Library/lcd1602_config.h:52:28: note: previous declaration of 'LCD1602_param' with type 'LCD1602_cfg_typedef[1]'
+   52 | extern LCD1602_cfg_typedef LCD1602_param[LCD_NUMBER];
+      |                            ^~~~~~~~~~~~~
+../Core/Src/main.c:60:31: error: lvalue required as unary '&' operand
+   60 |         __HAL_TIM_SET_COUNTER(&TIM4, 0);
+      |                               ^
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:1282:59: note: in definition of macro '__HAL_TIM_SET_COUNTER'
+ 1282 | #define __HAL_TIM_SET_COUNTER(__HANDLE__, __COUNTER__)  ((__HANDLE__)->Instance->CNT = (__COUNTER__))
+      |                                                           ^~~~~~~~~~
+../Library/lcd1602.c: In function 'lcd_data':
+../Core/Src/main.c:61:37: error: lvalue required as unary '&' operand
+   61 |         while(__HAL_TIM_GET_COUNTER(&TIM4) < us);
+      |                                     ^
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:1289:46: note: in definition of macro '__HAL_TIM_GET_COUNTER'
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                              ^~~~~~~~~~
+../Core/Src/main.c: In function 'delay_ms':
+../Library/lcd1602.c:17:73: error: 'D4_PINx' undeclared (first use in this function)
+   17 |                 HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D4_GPIOx, D4_PINx, 1);
+      |                                                                         ^~~~~~~
+../Core/Src/main.c:66:31: error: lvalue required as unary '&' operand
+   66 |         __HAL_TIM_SET_COUNTER(&TIM4, 0);
+      |                               ^
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:1282:59: note: in definition of macro '__HAL_TIM_SET_COUNTER'
+ 1282 | #define __HAL_TIM_SET_COUNTER(__HANDLE__, __COUNTER__)  ((__HANDLE__)->Instance->CNT = (__COUNTER__))
+      |                                                           ^~~~~~~~~~
+../Library/lcd1602.c:17:73: note: each undeclared identifier is reported only once for each function it appears in
+../Library/lcd1602_config.c:7:17: error: 'NODE' undeclared here (not in a function)
+    7 |                 NODE,
+      |                 ^~~~
+../Library/lcd1602_config.c:8:23: warning: initialization of 'short unsigned int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+    8 |                 NULL, NULL, // none pin d0
+      |                       ^~~~
+../Library/lcd1602_config.c:8:23: note: (near initialization for 'LCD1602_param[0].D1_PINx')
+../Library/lcd1602_config.c:9:23: warning: initialization of 'short unsigned int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+    9 |                 NULL, NULL, // none pin d1
+      |                       ^~~~
+../Core/Src/main.c:67:37: error: lvalue required as unary '&' operand
+   67 |         while(__HAL_TIM_GET_COUNTER(&TIM4) < 1000*ms);
+      |                                     ^
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:1289:46: note: in definition of macro '__HAL_TIM_GET_COUNTER'
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                              ^~~~~~~~~~
+../Library/lcd1602.c:23:73: error: 'D5_PINx' undeclared (first use in this function)
+   23 |                 HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D5_GPIOx, D5_PINx, 1);
+      |                                                                         ^~~~~~~
+../Library/lcd1602_config.c:9:23: note: (near initialization for 'LCD1602_param[0].D2_PINx')
+../Library/lcd1602.c:29:73: error: 'D6_PINx' undeclared (first use in this function)
+   29 |                 HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D6_GPIOx, D6_PINx, 1);
+      |                                                                         ^~~~~~~
+../Library/lcd1602.c:35:73: error: 'D7_PINx' undeclared (first use in this function)
+   35 |                 HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D7_GPIOx, D7_PINx, 1);
+      |                                                                         ^~~~~~~
+../Library/lcd1602.c: In function 'lcd_cmd':
+../Library/lcd1602.c:42:65: error: 'D2_PINx' undeclared (first use in this function)
+   42 |         HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D2_GPIOx, D2_PINx, 0); // write command
+      |                                                                 ^~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Library/subdir.mk:22: Library/lcd1602_config.o] Error 1
+../Library/lcd1602.c:47:65: error: 'D3_PINx' undeclared (first use in this function)
+   47 |         HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D3_GPIOx, D3_PINx, 0); // EN low to ensure/ confirm current state is 0
+      |                                                                 ^~~~~~~
+../Library/lcd1602.c:48:9: warning: implicit declaration of function 'delay_us' [-Wimplicit-function-declaration]
+   48 |         delay_us(5);
+      |         ^~~~~~~~
+../Library/lcd1602.c: In function 'lcd_init':
+../Library/lcd1602.c:68:65: error: 'D2_PINx' undeclared (first use in this function)
+   68 |         HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D2_GPIOx, D2_PINx, 0); //rs
+      |                                                                 ^~~~~~~
+../Library/lcd1602.c:70:65: error: 'D3_PINx' undeclared (first use in this function)
+   70 |         HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D3_GPIOx, D3_PINx, 0); //en
+      |                                                                 ^~~~~~~
+../Library/lcd1602.c:75:9: warning: implicit declaration of function 'delay_ms' [-Wimplicit-function-declaration]
+   75 |         delay_ms(150);
+      |         ^~~~~~~~
+../Library/lcd1602.c: In function 'lcd_writeChar':
+../Library/lcd1602.c:141:65: error: 'D2_PINx' undeclared (first use in this function)
+  141 |         HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D2_GPIOx, D2_PINx, 1);
+      |                                                                 ^~~~~~~
+../Library/lcd1602.c:143:65: error: 'D3_PINx' undeclared (first use in this function)
+  143 |         HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D3_GPIOx, D3_PINx, 0);
+      |                                                                 ^~~~~~~
+../Library/lcd1602.c: In function 'lcd_writeString':
+../Library/lcd1602.c:174:41: error: 'lcd16x2Index' undeclared (first use in this function)
+  174 |         HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D2_GPIOx, D2_PINx, 1);
+      |                                         ^~~~~~~~~~~~
+../Library/lcd1602.c:174:65: error: 'D2_PINx' undeclared (first use in this function)
+  174 |         HAL_GPIO_WritePin(LCD1602_param[lcd16x2Index].D2_GPIOx, D2_PINx, 1);
+      |                                                                 ^~~~~~~
+make: *** [Library/subdir.mk:22: Library/lcd1602.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+
+22:16:30 Build Failed. 22 errors, 4 warnings. (took 1s.553ms)
+
